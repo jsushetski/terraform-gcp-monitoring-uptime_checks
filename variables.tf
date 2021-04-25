@@ -24,7 +24,7 @@ variable "notification_channels" {
 
 variable "period" {
   type    = number
-  default = 300
+  default = 60
 
   validation {
     condition     = contains([60, 300, 600, 900,], var.period)
