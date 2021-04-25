@@ -41,7 +41,7 @@ variable "tcp_port" {
   default = null
 
   validation {
-    condition = can(var.tcp_port >=1 && var.tcp_port <= 65535)
+    condition = try((var.tcp_port >=1 && var.tcp_port <= 65535), false)
     error_message = "The value of 'tcp_port' must be between 1 and 65535."
   }
 }
