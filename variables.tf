@@ -17,6 +17,11 @@ variable "http_port" {
   }
 }
 
+variable "notification_channels" {
+  type    = list(string)
+  default = []
+}
+
 variable "period" {
   type    = number
   default = 300
