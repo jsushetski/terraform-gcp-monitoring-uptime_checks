@@ -25,5 +25,5 @@ module "alert_policy" {
 }
 
 output "debug" {
-  value = alert_policy.debug1
+  value = module.alert_policy.debug1
 }
