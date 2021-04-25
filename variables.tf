@@ -66,7 +66,7 @@ variable "uptime_check_regions" {
   }
 }
 
-variable "use_ssl" {
+variable "check_ssl" {
   type    = bool
   default = true
 }
