@@ -12,7 +12,7 @@ variable "http_port" {
   default = 443
 
   validation {
-    condition = can(var.http_port >=1 && var.http_port <= 65535)
+    condition     = can(var.http_port >= 1 && var.http_port <= 65535)
     error_message = "The value of 'http_port' must be between 1 and 65535."
   }
 }
@@ -27,7 +27,7 @@ variable "period" {
   default = 60
 
   validation {
-    condition     = contains([60, 300, 600, 900,], var.period)
+    condition     = contains([60, 300, 600, 900, ], var.period)
     error_message = "The specified period is not valid."
   }
 }
@@ -41,7 +41,7 @@ variable "tcp_port" {
   default = null
 
   validation {
-    condition = try((var.tcp_port >=1 && var.tcp_port <= 65535), true)
+    condition     = try((var.tcp_port >= 1 && var.tcp_port <= 65535), true)
     error_message = "The value of 'tcp_port' must be between 1 and 65535."
   }
 }
@@ -51,17 +51,17 @@ variable "timeout" {
   default = 10
 
   validation {
-    condition = var.timeout >= 1 && var.timeout <= 60
+    condition     = var.timeout >= 1 && var.timeout <= 60
     error_message = "The value of 'timeout' must be between 1 and 60."
   }
 }
 
 variable "uptime_check_regions" {
   type    = list(string)
-  default = ["USA",]
+  default = ["USA", ]
 
   validation {
-    condition = length(setsubtract(var.uptime_check_regions, ["USA",])) == 0
+    condition     = length(setsubtract(var.uptime_check_regions, ["USA", ])) == 0
     error_message = "The specified uptime check region(s) are not valid."
   }
 }

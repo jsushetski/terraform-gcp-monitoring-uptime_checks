@@ -33,7 +33,7 @@ resource "google_monitoring_uptime_check_config" "uptime_check" {
   monitored_resource {
     type = "uptime_url"
     labels = {
-      host = var.host
+      host       = var.host
       project_id = var.project
     }
   }
