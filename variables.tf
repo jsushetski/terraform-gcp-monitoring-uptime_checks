@@ -38,6 +38,7 @@ variable "project" {
 
 variable "tcp_port" {
   type    = number
+  default = null
 
   validation {
     condition = can(var.tcp_port >=1 && var.tcp_port <= 65535)
