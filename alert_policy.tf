@@ -1,6 +1,8 @@
 module "alert_policy" {
   source = "git::https://github.com/jsushetski/terraform-gcp-monitoring-alert_policies.git?ref=main"
 
+  project = var.project
+
   display_name = var.tcp_port == null ? "${var.host} HTTP(S) Availability" : "${var.host} TCP Check"
 
   conditions = [
