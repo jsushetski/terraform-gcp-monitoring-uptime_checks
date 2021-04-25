@@ -18,9 +18,8 @@ module "alert_policy" {
         "resource.*",
       ]
       per_series_aligner = "ALIGN_NEXT_OLDER"
-      trigger = {
-        count = 1
-      }
+      trigger_count      = 1
+      trigger_percent    = 0
     },
   ]
 }
