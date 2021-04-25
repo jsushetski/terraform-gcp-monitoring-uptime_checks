@@ -7,7 +7,7 @@ resource "google_monitoring_uptime_check_config" "uptime_check" {
 
   selected_regions = var.uptime_check_regions
 
-  period = var.period
+  period = "${var.period}s"
 
   dynamic "http_check" {
     for_each = var.tcp_port == null ? [""] : []
