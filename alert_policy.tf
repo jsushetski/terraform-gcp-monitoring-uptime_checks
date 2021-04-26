@@ -37,5 +37,5 @@ module "alert_policy" {
 
   display_name = var.tcp_port == null ? "${var.host} HTTP(S) Availability" : "${var.host} TCP Check"
 
-  conditions_threshold = var.check_ssl ? [local.uptime_check, local.ssl_expiry_check] : [local.uptime_check,] 
+  conditions_threshold = var.check_ssl ? [local.uptime_check, local.ssl_expiry_check, ] : [local.uptime_check, ]
 }
