@@ -39,7 +39,3 @@ module "alert_policy" {
 
   conditions_threshold = var.check_ssl ? [local.uptime_check, local.ssl_expiry_check] : [local.uptime_check,] 
 }
-
-output "debug" {
-  value = module.alert_policy.debug1
-}
