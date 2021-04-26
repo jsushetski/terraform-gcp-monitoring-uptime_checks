@@ -24,7 +24,7 @@ locals {
     alignment_period     = 300
     cross_series_reducer = "REDUCE_MAX"
     group_by_fields      = []
-    per_series_reducer   = "ALIGN_MEAN"
+    per_series_aligner   = "ALIGN_MEAN"
     trigger_count        = 1
     trigger_percent      = 0
   }
