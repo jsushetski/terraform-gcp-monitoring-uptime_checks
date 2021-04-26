@@ -31,7 +31,7 @@ locals {
 }
 
 module "alert_policy" {
-  source = "git::https://github.com/jsushetski/terraform-gcp-monitoring-alert_policies.git?ref=main"
+  source = "git::https://github.com/jsushetski/terraform-gcp-monitoring-alert_policies.git?ref=v1.0.0"
 
   project = var.project
 
