@@ -1,3 +1,9 @@
+variable "enable_alert_policy" {
+  type        = bool
+  default     = true
+  description = "Enables alert policy configuration for the uptime check."
+}
+
 variable "host" {
   type        = string
   description = "The host monitored by the uptime check."
