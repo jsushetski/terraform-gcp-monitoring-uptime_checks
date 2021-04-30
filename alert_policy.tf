@@ -2,7 +2,7 @@ locals {
   uptime_check = {
     display_name         = var.tcp_port == null ? "HTTP(S) Check on ${var.host}" : "TCP Check of ${var.host} on port ${var.tcp_port}"
     comparison           = "COMPARISON_GT"
-    duration             = 60
+    duration             = var.alert_duration
     filter               = "metric.type=\"monitoring.googleapis.com/uptime_check/check_passed\" resource.type=\"uptime_url\" metric.label.\"check_id\"=\"${google_monitoring_uptime_check_config.uptime_check.uptime_check_id}\""
     threshold_value      = 1
     alignment_period     = 1200
