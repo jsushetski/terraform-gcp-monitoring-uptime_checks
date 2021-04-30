@@ -1,3 +1,14 @@
+variable "alert_duration" {
+  type        = number
+  default     = 60
+  description = "The amount of time that an uptime check issue must exist to trigger an alert notification.  Must be a multiple of 60 seconds."
+
+  validation {
+    condition     = var.alert_duration % 60 == 0
+    error_message = "The value of 'alert_duration' must be a multiple of 60."
+  }
+}
+
 variable "enable_alert_policy" {
   type        = bool
   default     = true
