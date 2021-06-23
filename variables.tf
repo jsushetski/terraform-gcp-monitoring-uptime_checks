@@ -87,6 +87,12 @@ variable "check_ssl" {
   description = "Enables SSL checking for HTTP checks."
 }
 
+variable "ssl_expiry_threshold" {
+  type        = number
+  default     = 30
+  description = "The number of days before the expiry of an SSL certificate that should trigger an alert."
+}
+
 variable "validate_ssl" {
   type        = bool
   default     = true
