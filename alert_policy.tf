@@ -20,7 +20,7 @@ locals {
     comparison           = "COMPARISON_LT"
     duration             = 60
     filter               = "metric.type=\"monitoring.googleapis.com/uptime_check/time_until_ssl_cert_expires\" resource.type=\"uptime_url\" resource.label.host=\"${var.host}\""
-    threshold_value      = 30
+    threshold_value      = var.ssl_expiry_threshold
     alignment_period     = 300
     cross_series_reducer = "REDUCE_MAX"
     group_by_fields      = []
